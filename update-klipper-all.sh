@@ -17,3 +17,4 @@ make flash KCONFIG_CONFIG=config.rpi
 read -p "Raspberry Pi MCU firmware flashed, please check above for any errors. Press [Enter] to continue, or [Ctrl+C] to abort"
 
 sudo service klipper start
+exit
