@@ -1,1 +1,0 @@
-/home/pi/klipper/update-klipper-all.sh
