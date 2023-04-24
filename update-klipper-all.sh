@@ -27,23 +27,23 @@ echo -e -n '\e[0;0m'
 read
 
 # Flash secondary MCU - Fystec PITB
-#make clean KCONFIG_CONFIG=klipper-fystec-pitb.config
-#make menuconfig KCONFIG_CONFIG=klipper-fystec-pitb.config
-#make KCONFIG_CONFIG=klipper-fystec-pitb.config
+make clean KCONFIG_CONFIG=klipper-fystec-pitb.config
+make menuconfig KCONFIG_CONFIG=klipper-fystec-pitb.config
+make KCONFIG_CONFIG=klipper-fystec-pitb.config
 
-# echo -e -n "\e[0;33mFYSTEC PITB MCU firmware built, please check above for any errors. "
-# echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
-# echo -e -n '\e[0;0m'
-# read
+echo -e -n "\e[0;33mFYSTEC PITB MCU firmware built, please check above for any errors. "
+echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
+echo -e -n '\e[0;0m'
+read
 
-# python3 ~/klipper/lib/canboot/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 62aff65e7dcf
+python3 ~/klipper/lib/canboot/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 0a754ef78da4
 
-# echo -e -n "\e[0;33mFYSTEC PITB MCU firmware flashed, please check above for any errors. "
-# echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
-# echo -e -n '\e[0;0m'
-# read
+echo -e -n "\e[0;33mFYSTEC PITB MCU firmware flashed, please check above for any errors. "
+echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
+echo -e -n '\e[0;0m'
+read
 
-# FLash tertiary MCU - Mellow SB2040
+# Flash tertiary MCU - Mellow SB2040
 make clean KCONFIG_CONFIG=klipper-mellow-fly-SB2040.config
 make menuconfig KCONFIG_CONFIG=klipper-mellow-fly-SB2040.config
 make KCONFIG_CONFIG=klipper-mellow-fly-SB2040.config
