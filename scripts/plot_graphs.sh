@@ -55,7 +55,7 @@ function plot_shaper_graph {
     axis="$(basename "${newfilename}" | cut -d '_' -f2)"
     mv "${filename}" "${isf}"/inputshaper/"${newfilename}"
     
-    sync && sleep 2
+    sync && sleep 5
     "${generator}" "${isf}"/inputshaper/"${newfilename}" -o "${isf}"/inputshaper/resonances_"${axis}"_"${date}".png
   done <<< "$(find /tmp -type f -name "resonances_*.csv" 2>&1 | grep -v "Permission")"
 }
@@ -70,7 +70,7 @@ function plot_belts_graph {
     mv "${filename}" "${isf}"/belts/belt_"${date_ext}"_"${belt}".csv
   done <<< "$(find /tmp -type f -name "raw_data_axis*.csv" 2>&1 | grep -v "Permission")"
   
-  sync && sleep 2
+  sync && sleep 5
   "${generator}" -c "${isf}"/belts/belt_"${date_ext}"_*.csv -o "${isf}"/belts/belts_"${date_ext}".png
 }
 
@@ -84,7 +84,7 @@ function plot_vibr_graph {
     mv "${filename}" "${isf}"/vibrations/"${newfilename}"
   done <<< "$(find /tmp -type f -name "adxl345-*.csv" 2>&1 | grep -v "Permission")"
   
-  sync && sleep 2
+  sync && sleep 5
   "${generator}" "${isf}"/vibrations/vibr_"${date_ext}"*.csv -o "${isf}"/vibrations/vibrations_"${date_ext}".png -a "$1" -k "${KLIPPER_FOLDER}"
   
   tar cfz "${isf}"/vibrations/vibrations_"${date_ext}".tar.gz "${isf}"/vibrations/vibr_"${date_ext}"*.csv
