@@ -1,4 +1,4 @@
-cd ~/klipper
+python3 ~/klipper/lib/canboot/flash_can.py -d /dev/serial/by-id/usb-Klipper_stm32f446xx_380033000A51373330333137-if00 -f ~/klipper/out/klipper.bicd ~/klipper
 
 echo -e -n "\e[0;31mStopping Klipper Service. "
 echo -e -n '\e[0;0m'
@@ -22,9 +22,9 @@ echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
 echo -e -n '\e[0;0m'
 read
 
-make flash FLASH_DEVICE=/dev/ttyACM0 KCONFIG_CONFIG=klipper-bigtreetech-octopus.config
-#python3 ~/klipper/lib/canboot/flash_can.py -d /dev/serial/by-id/usb-Klipper_stm32f446xx_380033000A51373330333137-if00 -f ~/klipper/out/klipper.bin
-#python3 ~/klipper/lib/canboot/flash_can.py -d /dev/serial/by-id/usb-CanBoot_stm32f446xx_380033000A51373330333137-if00 -f ~/klipper/out/klipper.bin
+#make flash FLASH_DEVICE=/dev/ttyACM0 KCONFIG_CONFIG=klipper-bigtreetech-octopus.config
+make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_stm32f446xx_380033000A51373330333137-if00 KCONFIG_CONFIG=klipper-bigtreetech-octopus.config
+make flash FLASH_DEVICE=/dev/serial/by-id/usb-CanBoot_stm32f446xx_380033000A51373330333137-if00 KCONFIG_CONFIG=klipper-bigtreetech-octopus.config
 echo -e -n "\e[0;33mBTT Octopus MCU firmware flashed, please check above for any errors. "
 echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
 echo -e -n '\e[0;0m'
