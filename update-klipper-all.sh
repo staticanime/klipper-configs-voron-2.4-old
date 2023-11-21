@@ -59,7 +59,7 @@ echo -e -n '\e[0;0m'
 read
 
 #python3 ~/klipper/lib/canboot/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 62aff65e7dcf
-python3 ~/klipper/lib/canboot/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 217456c38ee2
+python3 ~/klipper/lib/canboot/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 43a836c9bbab
 
 echo -e -n "\e[0;33mMellow FLY SB2040 MCU firmware flashed, please check above for any errors. "
 echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
