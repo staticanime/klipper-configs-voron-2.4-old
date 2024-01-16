@@ -49,24 +49,24 @@ read
 ################################################################################
 
 # Flash tertiary MCU - Mellow SB2040
-#make clean KCONFIG_CONFIG=klipper-mellow-fly-SB2040.config
-#make menuconfig KCONFIG_CONFIG=klipper-mellow-fly-SB2040.config
-#make -j 4 KCONFIG_CONFIG=klipper-mellow-fly-SB2040.config
+make clean KCONFIG_CONFIG=klipper-mellow-fly-SB2040.config
+make menuconfig KCONFIG_CONFIG=klipper-mellow-fly-SB2040.config
+make -j 4 KCONFIG_CONFIG=klipper-mellow-fly-SB2040.config
 
-#echo -e -n "\e[0;33mMellow FLY SB2040 MCU firmware built, please check above for any errors. "
-#echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
-#echo -e -n '\e[0;0m'
-#read
+echo -e -n "\e[0;33mMellow FLY SB2040 MCU firmware built, please check above for any errors. "
+echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
+echo -e -n '\e[0;0m'
+read
 
-#python3 ~/klipper/lib/canboot/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 62aff65e7dcf
+python3 ~/klipper/lib/canboot/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 62aff65e7dcf
+# python3 ~/klipper/lib/canboot/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 217456c38ee2
 
-#echo -e -n "\e[0;33mMellow FLY SB2040 MCU firmware flashed, please check above for any errors. "
-#echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
-#echo -e -n '\e[0;0m'
-#read
+echo -e -n "\e[0;33mMellow FLY SB2040 MCU firmware flashed, please check above for any errors. "
+echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
+echo -e -n '\e[0;0m'
+read
 
 ################################################################################
-
 # Flash Host MCU - Raspberry Pi
 make clean KCONFIG_CONFIG=klipper-raspberry-pi.config
 make menuconfig KCONFIG_CONFIG=klipper-raspberry-pi.config
